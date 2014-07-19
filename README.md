@@ -12,7 +12,7 @@ Setup
 
 This project is build using grunt, to get started read [here](http://gruntjs.com/installing-grunt)
 
-Once grunt is installed ```cd``` to AroundMe and run ```grunt```, however for convinince ```index.js``` in build folder is also checked in.
+Once ```grunt``` is installed ```cd``` to AroundMe and run ```grunt```, however for convinince ```index.js``` in build folder is also checked in.
 
 You will  need to install [ElasticSearch](http://www.elasticsearch.org/), read about installing it [here](http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/_installing_elasticsearch.html), also install [marvel](http://www.elasticsearch.org/guide/en/marvel/current/) plugin for configuration and testing.
 
@@ -20,7 +20,7 @@ The data used here is from [Geofabrik](http://download.geofabrik.de/).
 
 I have used points.shp file from the  [Great-Britain](http://download.geofabrik.de/europe/great-britain.html) shape file download, but you can use any other country as well.
 
-To extract the data,I wrote a quick python script using[pyshp](https://code.google.com/p/pyshp/)
+To extract the data,I wrote a quick python script using  [pyshp](https://code.google.com/p/pyshp/)
 
 you can easily install it by typing ```sudo easy_install pyshp```.
 
@@ -67,11 +67,7 @@ for r in sr:
 ```
 The script inserts all records which have a valid ```name``` and type ```column``` into index.
 
-
-Testing
--------
-
-Try executing following commands from marvel.
+  
 
 To get the count of records in index
 ------------------------------------
@@ -153,10 +149,12 @@ GET places / _search ? size = 100 & from = 0 {
 }
 ```
 
-Final step is to configure a proxy to server html and to route ajax requests to localhost9200.
+Final step is to configure a proxy to server html and to route ajax requests to ```localhost9200.```
 
-In this case the server in use is nginx, below is the minimal configuration, The localhost:80 is mapped to server contents of AroundMe Folfer
-and the proxy is mapped to route requests /elastic to localhost:9200.
+In this case the server in use is nginx, below is the minimal configuration, The ```localhost:80``` is mapped to server contents of AroundMe folder
+and the proxy is mapped to route requests ```/elastic ```to ```localhost:9200```
+
+
 ```
 server {
         listen       80;
@@ -170,9 +168,9 @@ server {
             root   /Users/varunpant/Documents/Github/AroundMe;
             index  index.html index.htm;
         }
-		location /elastic/ {
-		    proxy_pass http://localhost:9200/;
-		}
+        location /elastic/ {
+            proxy_pass http://localhost:9200/;
+        }
 
         #error_page  404              /404.html;
 
@@ -184,9 +182,16 @@ server {
         } 
     }
 ```
+
+
 Once configured restart the server and browse to ```localhost```  :)
  
 I hope you find it useful.
 
 If you like or use this project somewhere please contact me at
 ```varun@varunpant.com```
+
+
+
+
+
