@@ -192,9 +192,4 @@ Once configured restart the server and browse to ```localhost```  :)
  
 I hope you find it useful.
 
-If you like or use this project somewhere please contact me at varun@varunpant.com
-
-
-
-
-
+If you like or use this project somewhere please contact me at varun@varunpant.com.
