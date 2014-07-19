@@ -107,10 +107,14 @@ GET places/_search
         }
     }
   }
-}```
+}
+
+```
 
 To search by geodistance and filter term
 ------------------------------------------
+
+
 ```
 GET places / _search ? size = 100 & from = 0 {
     "sort": [{
